@@ -1,0 +1,20 @@
+{
+  "name": "vueTest",
+  "authors": [
+    "valbeat <kj1ktk@gmail.com>"
+  ],
+  "description": "Vue.js application",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "^1.0.26"
+  }
+}
