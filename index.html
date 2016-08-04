@@ -5,16 +5,26 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>ToDo Application</title>
     <script src="/bower_components/vue/dist/vue.min.js"></script>
+    <link rel="stylesheet" href="sources/css/style.css">
 </head>
 <body>
-    <div id="app">
-        <h2>{{title}}</h2>
-        side: <input type="text" v-model="side">
-        area: <input type="text" v-model="area">
-    </div>
+    <h1>ToDo App</h1>
 
+    <div id="app">
+        <small>{{remaining}} / {{tasks.length}}</small><br>
+        <span class="link-like" @click="purge">チェックしたものを消去</span><br>
+        <span class="link-like" @click="selectAll">全て選択</span>         <span class="link-like" @click="clearAll">チェックをはずす</span>
+        <ul>
+            <li v-for="task in tasks">
+                <input type="checkbox" :checked="task.done" @click="task.done = !task.done" >
+                <span :class="{'done': task.done}">{{task.text}}</span>
+                <span class="link-like" @click="delete($index)">[X]</span>
+            </li>
+        </ul>
+        <input type="text" v-model="newTask" @keyup.enter="add" placeholder="new task...">
+    </div>
     <script src="/sources/js/application.js"></script>
 </body>
 </html>

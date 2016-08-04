@@ -5,3 +5,26 @@
 .bold {
     font-weight:bold;
 }
+
+
+ul {
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+ul > li {
+    padding: 0 0 5px;
+}
+input[type=text] {
+    padding:5px;
+    border-radius: 3px;
+}
+
+.done {text-decoration: line-through;
+    color: #aaa;}
+
+.link-like {
+    color: blue;
+    cursor: pointer;
+    font-size:12px;
+}
